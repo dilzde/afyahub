@@ -1,6 +1,52 @@
-/* ═══════════════════════════════════════════════════════════════
-   AFYAHUB — GLOBAL DESIGN SYSTEM
-   ═══════════════════════════════════════════════════════════════ */
+/* ── Contact cards ── */
+.contact-card-link {
+  text-decoration: none;
+  display: block;
+  height: 100%;
+}
+.contact-card {
+  cursor: pointer;
+  height: 100%;
+  transition: box-shadow 0.3s var(--ease), transform 0.3s var(--ease);
+}
+.contact-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+.contact-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--accent-lite);
+  color: var(--accent);
+  display: grid;
+  place-items: center;
+  margin-bottom: 1rem;
+  transition: background 0.25s, color 0.25s;
+}
+.contact-card:hover .contact-card-icon {
+  background: var(--accent);
+  color: #fff;
+}
+.contact-card-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.3rem;
+}
+.contact-card-value {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--ink);
+  margin-bottom: 0.25rem;
+}
+.contact-card-sub {
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+
 
 :root {
   --white: #ffffff;
@@ -314,7 +360,7 @@ button {
   margin-top: 1.2rem;
   justify-content: center;
 }
-@media (max-width: 880px) {
+@media (max-width: 1060px) {
   .main-nav,
   .header-cta {
     display: none;
