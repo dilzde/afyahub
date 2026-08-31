@@ -1,0 +1,10 @@
+{
+  "hero": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1600&h=900&fit=crop&q=80",
+  "ethos": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=560&h=750&fit=crop&q=80",
+  "team": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&h=1000&fit=crop&q=80",
+  "facility": [
+    "https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=800&h=600&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=800&h=600&fit=crop&q=80",
+    "https://images.unsplash.com/photo-1504439468489-c8920d796a29?w=800&h=600&fit=crop&q=80"
+  ]
+}

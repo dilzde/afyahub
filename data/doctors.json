@@ -1,0 +1,35 @@
+[
+  {
+    "id": "madaraka-ogoye",
+    "name": "Dr. Madaraka Ogoye",
+    "title": "Co-Founder & Lead Surgeon",
+    "specialty": "General & Laparoscopic Surgery",
+    "bio": "Dr. Madaraka Ogoye is a consultant surgeon with extensive experience in minimally invasive surgery. A co-founder of AfyaHub, he is passionate about making world-class surgical care accessible to Kenyan families. He trained locally and internationally, bringing cutting-edge laparoscopic techniques to Nairobi.",
+    "qualifications": ["MBChB", "MMed (Surgery)", "Fellow, College of Surgeons of East Africa"],
+    "image": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400&h=400&fit=crop&q=80",
+    "isCofounder": true,
+    "order": 1
+  },
+  {
+    "id": "misheck-wanjiku",
+    "name": "Dr. Misheck Wanjiku",
+    "title": "Co-Founder & Clinical Director",
+    "specialty": "Internal Medicine & Endoscopy",
+    "bio": "Dr. Misheck Wanjiku is a physician and endoscopist who co-founded AfyaHub with a vision of patient-centred, consultant-led care. Her expertise in gastrointestinal medicine and endoscopy ensures patients receive comprehensive diagnostic and therapeutic care under one roof.",
+    "qualifications": ["MBChB", "MMed (Internal Medicine)", "Diploma in Endoscopy"],
+    "image": "https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&h=400&fit=crop&q=80",
+    "isCofounder": true,
+    "order": 2
+  },
+  {
+    "id": "specialist-3",
+    "name": "Dr. Samuel Kariuki",
+    "title": "Consultant Anaesthesiologist",
+    "specialty": "Anaesthesia & Perioperative Care",
+    "bio": "Dr. Samuel Kariuki provides safe, patient-focused anaesthetic care for all surgical and endoscopic procedures at AfyaHub. His meticulous approach to perioperative management ensures every patient is in the best possible hands throughout their procedure.",
+    "qualifications": ["MBChB", "MMed (Anaesthesiology)"],
+    "image": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=400&fit=crop&q=80",
+    "isCofounder": false,
+    "order": 3
+  }
+]

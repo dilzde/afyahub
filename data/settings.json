@@ -1,0 +1,18 @@
+{
+  "contact": {
+    "phone": "0721 817 238",
+    "email": "care@afyahub.co.ke",
+    "address": "AfyaHub Centre, Nairobi",
+    "addressDetail": "Off Waiyaki Way, Westlands"
+  },
+  "hours": [
+    { "days": "Mon – Fri", "hours": "8:00 – 17:00" },
+    { "days": "Saturday", "hours": "9:00 – 13:00" },
+    { "days": "Sunday", "hours": "Closed" }
+  ],
+  "stats": [
+    { "value": "Multiple", "label": "Consultant specialists" },
+    { "value": "04", "label": "Specialty services" },
+    { "value": "< 1 day", "label": "Booking response" }
+  ]
+}

@@ -1,0 +1,66 @@
+[
+  {
+    "id": "consultations",
+    "name": "Consultations",
+    "brief": "General & specialist surgical review",
+    "tag": "Clinic",
+    "icon": "users",
+    "color": "accent",
+    "description": "Sit down with a consultant — not a queue. We take time with your history, review any scans or results you bring, and give you a clear plan in plain language. No referral needed.",
+    "procedures": [
+      "General surgical consultation",
+      "Specialist review & second opinions",
+      "Review of imaging & laboratory results",
+      "Pre-operative assessment",
+      "Post-procedure follow-up"
+    ]
+  },
+  {
+    "id": "laparoscopy",
+    "name": "Laparoscopy",
+    "brief": "Keyhole surgery & related procedures",
+    "tag": "Theatre",
+    "icon": "sun",
+    "color": "sage",
+    "description": "Minimally invasive surgery through incisions measured in millimetres — meaning less pain, shorter hospital stays and a faster return to work and family.",
+    "procedures": [
+      "Diagnostic laparoscopy",
+      "Laparoscopic cholecystectomy (gallbladder)",
+      "Appendicectomy",
+      "Laparoscopic hernia repair",
+      "Adhesiolysis"
+    ]
+  },
+  {
+    "id": "minor-theatre",
+    "name": "Minor Theatre",
+    "brief": "Day-case procedures, local anaesthesia",
+    "tag": "Day case",
+    "icon": "file",
+    "color": "gold",
+    "description": "Straightforward procedures done properly: in, treated, and home the same day. You'll need someone to accompany you where sedation is used.",
+    "procedures": [
+      "Excision of lumps & sebaceous cysts",
+      "Biopsies",
+      "Incision & drainage",
+      "Wound care & suturing",
+      "Male circumcision"
+    ]
+  },
+  {
+    "id": "endoscopy",
+    "name": "Colonoscopy & Endoscopy",
+    "brief": "Diagnostic & therapeutic, with full prep support",
+    "tag": "Endoscopy",
+    "icon": "monitor",
+    "color": "purple",
+    "description": "A clear look inside, without guesswork. We guide you through bowel preparation step by step before the day, and discuss findings with you before you leave.",
+    "procedures": [
+      "Diagnostic colonoscopy",
+      "Upper GI endoscopy (gastroscopy)",
+      "Polypectomy",
+      "Colorectal cancer screening",
+      "Bowel prep guidance & follow-up"
+    ]
+  }
+]
