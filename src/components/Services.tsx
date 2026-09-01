@@ -35,6 +35,16 @@ const icons: Record<string, React.ReactNode> = {
       <rect x="2" y="6" width="20" height="12" rx="2" /><path d="M12 12h.01" /><path d="M17 12h.01" /><path d="M7 12h.01" />
     </svg>
   ),
+  heart: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+    </svg>
+  ),
+  shield: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+    </svg>
+  ),
 };
 
 export default function Services({ services }: { services: Service[] }) {
@@ -45,12 +55,13 @@ export default function Services({ services }: { services: Service[] }) {
       <div className="wrap">
         <div className="section-head" data-reveal="">
           <p className="overline">What we do</p>
-          <h2 className="h2">Four services, one standard of care</h2>
+          <h2 className="h2">Specialist surgical &amp; endoscopic care</h2>
           <p>Every service is consultant-led, from first consultation to final follow-up. Expand any row to see what it covers.</p>
         </div>
         <div className="svc-list" data-reveal="">
           {services.map((svc) => {
             const isOpen = openId === svc.id;
+            const iconNode = icons[svc.icon] || icons.users;
             return (
               <article key={svc.id} id={svc.id} className={`svc${isOpen ? " open" : ""}`}>
                 <button
@@ -58,7 +69,7 @@ export default function Services({ services }: { services: Service[] }) {
                   aria-expanded={isOpen}
                   onClick={() => setOpenId(isOpen ? null : svc.id)}
                 >
-                  <span className="svc-icon">{icons[svc.icon]}</span>
+                  <span className="svc-icon">{iconNode}</span>
                   <span className="svc-title-wrap">
                     <span className="svc-name">{svc.name}</span>
                     <span className="svc-brief">{svc.brief}</span>
@@ -75,10 +86,12 @@ export default function Services({ services }: { services: Service[] }) {
                     <div className="svc-cols">
                       <p className="svc-desc">{svc.description}</p>
                       <ul className="svc-proc">
-                        {svc.procedures.map((p, i) => <li key={i}>{p}</li>)}
+                        {(svc.procedures || []).map((p, i) => (
+                          <li key={i}>{p}</li>
+                        ))}
                       </ul>
                     </div>
-                    <Link href="/appointment" className="link-arrow svc-book">
+                    <Link href={`/appointment?service=${encodeURIComponent(svc.name)}`} className="link-arrow svc-book">
                       Book for {svc.name.toLowerCase()}
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M5 12h14M13 6l6 6-6 6" />

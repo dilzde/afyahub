@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import BookingForm from "@/components/BookingForm";
 import RevealInit from "@/components/RevealInit";
-import settingsData from "../../../data/settings.json";
+import { getSettings } from "@/lib/data";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Book an Appointment",
@@ -13,8 +15,14 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function AppointmentPage({ searchParams }: { searchParams: Promise<{ service?: string }> }) {
+export default async function AppointmentPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ service?: string }>;
+}) {
   const params = await searchParams;
+  const settings = getSettings();
+
   return (
     <>
       <RevealInit />
@@ -25,7 +33,7 @@ export default async function AppointmentPage({ searchParams }: { searchParams: 
           <p>We&apos;ll confirm your slot within one working day — by email or phone.</p>
         </div>
       </div>
-      <BookingForm settings={settingsData} preselectedService={params.service} />
+      <BookingForm settings={settings} preselectedService={params.service} />
     </>
   );
 }

@@ -1,3 +1,6 @@
+"use client";
+import DoctorAvatar from "@/components/DoctorAvatar";
+
 interface Doctor {
   id: string;
   name: string;
@@ -7,10 +10,13 @@ interface Doctor {
   qualifications: string[];
   image: string;
   isCofounder: boolean;
+  order?: number;
 }
 
 export default function Cofounders({ doctors }: { doctors: Doctor[] }) {
-  const cofounders = doctors.filter((d) => d.isCofounder).sort((a, b) => (a as any).order - (b as any).order);
+  const cofounders = doctors
+    .filter((d) => d.isCofounder)
+    .sort((a, b) => (a.order || 0) - (b.order || 0));
 
   return (
     <section className="cofounders" id="cofounders">
@@ -26,9 +32,12 @@ export default function Cofounders({ doctors }: { doctors: Doctor[] }) {
         <div className="cofounders-grid" data-reveal="">
           {cofounders.map((doctor) => (
             <div className="cofounder-card" key={doctor.id}>
-              <div className="cofounder-photo">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={doctor.image} alt={doctor.name} loading="lazy" />
+              <div className="cofounder-photo" style={{ position: "relative" }}>
+                <DoctorAvatar
+                  name={doctor.name}
+                  image={doctor.image}
+                  aspectRatio="4/3"
+                />
               </div>
               <div className="cofounder-body">
                 <p className="cofounder-role">{doctor.title}</p>

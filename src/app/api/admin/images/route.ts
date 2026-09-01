@@ -1,15 +1,22 @@
 import { NextResponse } from "next/server";
-import { readFileSync, writeFileSync } from "fs";
-import path from "path";
+import { getImages, saveJsonData } from "@/lib/data";
 
-const dataFile = path.join(process.cwd(), "data", "images.json");
+export const dynamic = "force-dynamic";
 
 export async function GET() {
-  try { return NextResponse.json(JSON.parse(readFileSync(dataFile, "utf-8"))); }
-  catch { return NextResponse.json({}); }
+  const data = getImages();
+  return NextResponse.json(data);
 }
 
 export async function POST(request: Request) {
-  try { writeFileSync(dataFile, JSON.stringify(await request.json(), null, 2)); return NextResponse.json({ ok: true }); }
-  catch { return NextResponse.json({ error: "Failed to save" }, { status: 500 }); }
+  try {
+    const body = await request.json();
+    const success = saveJsonData("images.json", body);
+    if (!success) {
+      return NextResponse.json({ error: "Failed to write file" }, { status: 500 });
+    }
+    return NextResponse.json({ ok: true });
+  } catch (e) {
+    return NextResponse.json({ error: "Failed to save" }, { status: 500 });
+  }
 }

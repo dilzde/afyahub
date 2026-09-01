@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import BookingForm from "@/components/BookingForm";
 import RevealInit from "@/components/RevealInit";
 import ContactCards from "@/components/ContactCards";
-import settingsData from "../../../data/settings.json";
+import { getSettings } from "@/lib/data";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -12,7 +14,8 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
-  const { contact, hours } = settingsData;
+  const settings = getSettings();
+  const { contact, hours } = settings;
 
   const cards = [
     {
@@ -109,7 +112,7 @@ export default function ContactPage() {
       </section>
 
       {/* Booking form */}
-      <BookingForm settings={settingsData} />
+      <BookingForm settings={settings} />
     </>
   );
 }

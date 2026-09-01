@@ -4,7 +4,7 @@ import "@/styles/globals.css";
 import Topbar from "@/components/Topbar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import settingsData from "../../data/settings.json";
+import { getSettings } from "@/lib/data";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -65,13 +65,15 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const settings = getSettings();
+
   return (
     <html lang="en" className={inter.variable}>
       <body>
-        <Topbar settings={settingsData} />
+        <Topbar settings={settings} />
         <Header />
         <main>{children}</main>
-        <Footer settings={settingsData} />
+        <Footer settings={settings} />
         <div className="toast" id="toast" role="status" aria-live="polite">
           <svg
             width="15"

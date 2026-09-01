@@ -7,10 +7,9 @@ import Team from "@/components/Team";
 import Journey from "@/components/Journey";
 import Faq from "@/components/Faq";
 import RevealInit from "@/components/RevealInit";
-import settingsData from "../../data/settings.json";
-import servicesData from "../../data/services.json";
-import doctorsData from "../../data/doctors.json";
-import imagesData from "../../data/images.json";
+import { getDoctors, getServices, getImages, getSettings } from "@/lib/data";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "AfyaHub — Expert Surgical & Endoscopic Care in Nairobi",
@@ -19,14 +18,19 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+  const doctors = getDoctors();
+  const services = getServices();
+  const images = getImages();
+  const settings = getSettings();
+
   return (
     <>
       <RevealInit />
-      <Hero settings={settingsData} heroImage={imagesData.hero} />
-      <Services services={servicesData} />
-      <Ethos ethosImage={imagesData.ethos} />
-      <Cofounders doctors={doctorsData} />
-      <Team teamImage={imagesData.team} />
+      <Hero settings={settings} heroImage={images.hero} />
+      <Services services={services} />
+      <Ethos ethosImage={images.ethos} />
+      <Cofounders doctors={doctors} />
+      <Team teamImage={images.team} />
       <Journey />
       <Faq />
     </>

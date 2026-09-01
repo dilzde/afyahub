@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import Services from "@/components/Services";
 import Journey from "@/components/Journey";
 import RevealInit from "@/components/RevealInit";
-import servicesData from "../../../data/services.json";
+import { getServices } from "@/lib/data";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Our Services",
@@ -12,6 +14,8 @@ export const metadata: Metadata = {
 };
 
 export default function ServicesPage() {
+  const services = getServices();
+
   return (
     <>
       <RevealInit />
@@ -22,7 +26,7 @@ export default function ServicesPage() {
           <p>Four consultant-led specialties, all under one roof in Nairobi. Expand any service to learn more.</p>
         </div>
       </div>
-      <Services services={servicesData} />
+      <Services services={services} />
       <Journey />
     </>
   );

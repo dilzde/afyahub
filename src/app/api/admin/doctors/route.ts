@@ -1,22 +1,20 @@
 import { NextResponse } from "next/server";
-import { readFileSync, writeFileSync } from "fs";
-import path from "path";
+import { getDoctors, saveJsonData } from "@/lib/data";
 
-const dataFile = path.join(process.cwd(), "data", "doctors.json");
+export const dynamic = "force-dynamic";
 
 export async function GET() {
-  try {
-    const data = readFileSync(dataFile, "utf-8");
-    return NextResponse.json(JSON.parse(data));
-  } catch {
-    return NextResponse.json([]);
-  }
+  const data = getDoctors();
+  return NextResponse.json(data);
 }
 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    writeFileSync(dataFile, JSON.stringify(body, null, 2));
+    const success = saveJsonData("doctors.json", body);
+    if (!success) {
+      return NextResponse.json({ error: "Failed to write file" }, { status: 500 });
+    }
     return NextResponse.json({ ok: true });
   } catch (e) {
     return NextResponse.json({ error: "Failed to save" }, { status: 500 });
